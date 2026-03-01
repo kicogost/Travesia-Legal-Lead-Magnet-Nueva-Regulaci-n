@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Gratuita — Regularización Extraordinaria 2026 | Travesía Legal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1a1a5e;
+            --navy-deep: #0f0f3d;
+            --navy-light: #2a2a7a;
+            --blue: #2563eb;
+            --blue-dark: #1d4ed8;
+            --blue-pale: #dbeafe;
+            --blue-soft: #eff6ff;
+            --white: #ffffff;
+            --cream: #f8f9fc;
+            --text-dark: #1a1a2e;
+            --text-mid: #3d3d5c;
+            --text-light: #6b6b8a;
+            --green-check: #22c55e;
+            --green-pale: #dcfce7;
+            --red-soft: #ef4444;
+            --red-pale: #fef2f2;
+            --gold: #e8a838;
+            --amber-pale: #fffbeb;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ═══ HERO ═══ */
+        .hero {
+            background: linear-gradient(155deg, var(--navy-deep) 0%, var(--navy) 40%, var(--navy-light) 100%);
+            padding: 48px 24px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: -60% -30%;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(37,99,235,.12) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(232,168,56,.06) 0%, transparent 50%);
+            animation: drift 25s ease-in-out infinite;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(37,99,235,.3), transparent);
+        }
+        @keyframes drift {
+            0%,100% { transform: translate(0,0); }
+            50% { transform: translate(-1%,1%); }
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+        .hero-logo {
+            display: flex; align-items: center; justify-content: center; gap: 12px;
+            margin-bottom: 24px; animation: fadeDown .8s ease-out;
+        }
+        .hero-logo svg { height: 42px; width: auto; }
+        .hero-logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px; font-weight: 700; color: var(--white);
+            letter-spacing: 2px; text-transform: uppercase; line-height: 1.1;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(37,99,235,.25);
+            border: 1px solid rgba(37,99,235,.4);
+            color: var(--blue-pale);
+            font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+            padding: 8px 22px; border-radius: 50px; margin-bottom: 28px;
+            animation: fadeDown .8s ease-out .1s both;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 6.5vw, 44px); color: var(--white);
+            line-height: 1.2; margin-bottom: 16px;
+            animation: fadeDown .8s ease-out .2s both;
+        }
+        .hero h1 span { color: var(--gold); }
+        .hero > .hero-content > p {
+            color: rgba(255,255,255,.8); font-size: 17px; max-width: 460px; margin: 0 auto;
+            animation: fadeDown .8s ease-out .3s both;
+        }
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ═══ LAYOUT ═══ */
+        .container { max-width: 640px; margin: 0 auto; padding: 0 20px; }
+        .intro { padding: 44px 0 36px; text-align: center; }
+        .intro h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px; color: var(--navy); margin-bottom: 12px;
+        }
+        .intro p { font-size: 16px; color: var(--text-mid); max-width: 520px; margin: 0 auto; }
+
+        /* ═══ CARDS ═══ */
+        .section-card {
+            background: var(--white); border-radius: 20px;
+            padding: 32px 28px; margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(26,26,94,.04), 0 8px 32px rgba(26,26,94,.06);
+            border: 1px solid rgba(26,26,94,.06);
+            animation: fadeUp .6s ease-out both;
+        }
+        .section-card:nth-child(1){animation-delay:.1s}
+        .section-card:nth-child(2){animation-delay:.15s}
+        .section-card:nth-child(3){animation-delay:.2s}
+        .section-card:nth-child(4){animation-delay:.25s}
+        .section-card:nth-child(5){animation-delay:.3s}
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .section-icon {
+            width: 50px; height: 50px; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px; margin-bottom: 18px;
+        }
+        .icon-red { background: var(--red-pale); }
+        .icon-blue { background: var(--blue-soft); }
+        .icon-family { background: #f0f0ff; }
+        .icon-shield { background: #faf5ff; }
+        .icon-gold { background: var(--amber-pale); }
+        .section-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px; color: var(--navy); margin-bottom: 14px; line-height: 1.3;
+        }
+        .section-card p { font-size: 15.5px; color: var(--text-mid); margin-bottom: 12px; }
+        .section-card p:last-child { margin-bottom: 0; }
+        .section-card strong { color: var(--text-dark); }
+
+        /* ═══ LISTS ═══ */
+        .req-list { list-style: none; margin: 16px 0; }
+        .req-list li {
+            display: flex; align-items: flex-start; gap: 12px;
+            padding: 11px 0; font-size: 15px; color: var(--text-mid);
+            border-bottom: 1px solid rgba(26,26,94,.05);
+        }
+        .req-list li:last-child { border-bottom: none; }
+        .check, .cross {
+            flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 13px; font-weight: 700; margin-top: 1px;
+        }
+        .check { background: var(--green-pale); color: var(--green-check); }
+        .cross { background: var(--red-pale); color: var(--red-soft); }
+
+        /* ═══ BOXES ═══ */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--blue-soft), #eef4ff);
+            border-left: 4px solid var(--blue); border-radius: 0 14px 14px 0;
+            padding: 20px 24px; margin: 16px 0;
+        }
+        .highlight-box p { color: var(--navy); font-weight: 600; font-size: 15px; margin: 0!important; }
+        .warning-box {
+            background: var(--amber-pale); border-left: 4px solid var(--gold);
+            border-radius: 0 14px 14px 0; padding: 20px 24px; margin: 16px 0;
+        }
+        .warning-box p { color: #78570f; font-weight: 600; font-size: 15px; margin: 0!important; }
+        .step-number {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 28px; height: 28px; background: var(--blue); color: white;
+            border-radius: 50%; font-size: 13px; font-weight: 700; flex-shrink: 0;
+        }
+        .additional-label {
+            display: inline-block; background: var(--blue); color: var(--white);
+            font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+            padding: 5px 14px; border-radius: 20px; margin-bottom: 14px;
+        }
+
+        /* ═══ CTA ═══ */
+        .cta-section {
+            background: var(--blue); border-radius: 24px; padding: 52px 32px;
+            text-align: center; margin: 40px 0 60px; position: relative; overflow: hidden;
+        }
+        .cta-section::before {
+            content: ''; position: absolute; top: -60%; right: -30%;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,.08), transparent 70%);
+            border-radius: 50%;
+        }
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(24px, 5vw, 34px); color: var(--white);
+            margin-bottom: 14px; position: relative; z-index: 1;
+        }
+        .cta-section p {
+            color: rgba(255,255,255,.88); font-size: 16px; margin-bottom: 36px;
+            max-width: 400px; margin-left: auto; margin-right: auto;
+            position: relative; z-index: 1;
+        }
+        .cta-button {
+            display: inline-block; background: var(--white); color: var(--blue);
+            font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 700;
+            text-decoration: none; padding: 18px 44px; border-radius: 60px;
+            transition: all .3s ease; position: relative; z-index: 1;
+            box-shadow: 0 4px 24px rgba(0,0,0,.15);
+        }
+        .cta-button:hover { background: var(--cream); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,.2); }
+        .cta-sub {
+            display: block; margin-top: 18px; font-size: 13px;
+            color: rgba(255,255,255,.55); position: relative; z-index: 1;
+        }
+
+        /* ═══ FLOATING ═══ */
+        .floating-cta {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: var(--white); padding: 14px 20px;
+            box-shadow: 0 -2px 24px rgba(26,26,94,.1); z-index: 100;
+            display: flex; align-items: center; justify-content: center; gap: 14px;
+            transform: translateY(100%); animation: slideUp .5s ease-out 2s both;
+        }
+        @keyframes slideUp { to { transform: translateY(0); } }
+        .floating-cta p { font-size: 14px; font-weight: 600; color: var(--navy); }
+        .floating-cta a {
+            display: inline-block; background: var(--blue); color: var(--white);
+            font-size: 14px; font-weight: 700; text-decoration: none;
+            padding: 12px 24px; border-radius: 50px; flex-shrink: 0;
+            transition: background .3s ease;
+        }
+        .floating-cta a:hover { background: var(--blue-dark); }
+
+        .footer { text-align: center; padding: 24px; padding-bottom: 100px; }
+        .footer-logo { margin-bottom: 12px; }
+        .footer-logo svg { height: 30px; width: auto; }
+        .footer p { font-size: 13px; color: var(--text-light); }
+        .footer a { color: var(--blue); text-decoration: none; }
+
+        @media (max-width: 480px) {
+            .hero { padding: 40px 20px; }
+            .section-card { padding: 24px 20px; }
+            .cta-section { padding: 40px 24px; margin: 32px 0 48px; }
+            .floating-cta { padding: 12px 16px; }
+            .floating-cta p { font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-logo">
+            <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 50 L30 15 L50 50" stroke="white" stroke-width="3" fill="none"/>
+                <path d="M70 50 L90 15 L110 50" stroke="white" stroke-width="3" fill="none"/>
+                <line x1="30" y1="15" x2="90" y2="15" stroke="white" stroke-width="3"/>
+                <line x1="10" y1="50" x2="110" y2="50" stroke="white" stroke-width="3"/>
+                <line x1="38" y1="15" x2="35" y2="50" stroke="white" stroke-width="1.5" opacity=".6"/>
+                <line x1="50" y1="15" x2="45" y2="50" stroke="white" stroke-width="1.5" opacity=".6"/>
+                <line x1="60" y1="15" x2="60" y2="50" stroke="white" stroke-width="1.5" opacity=".6"/>
+                <line x1="70" y1="15" x2="75" y2="50" stroke="white" stroke-width="1.5" opacity=".6"/>
+                <line x1="82" y1="15" x2="85" y2="50" stroke="white" stroke-width="1.5" opacity=".6"/>
+            </svg>
+            <div class="hero-logo-text">Travesía<br>Legal</div>
+        </div>
+        <div class="hero-badge">Segundo Borrador — 2026</div>
+        <h1>Guía Gratuita: <span>Regularización Extraordinaria</span></h1>
+        <p>Todo lo que necesitas saber sobre la nueva ley, explicado de forma sencilla y clara.</p>
+    </div>
+</section>
+
+<div class="container">
+
+    <div class="intro">
+        <h2>¿Qué ha cambiado?</h2>
+        <p>Acaba de salir el segundo borrador de la ley de regularización. Aquí te explicamos las novedades más importantes para que sepas exactamente dónde estás.</p>
+    </div>
+
+    <!-- 1 -->
+    <div class="section-card">
+        <div class="section-icon icon-red">🚫</div>
+        <h3>¿Quiénes NO pueden acogerse?</h3>
+        <p>El segundo borrador lo deja muy claro: si ya tienes algún tipo de permiso de estancia o residencia, <strong>no puedes</strong> beneficiarte de esta regularización extraordinaria.</p>
+        <p>Esto incluye, por ejemplo:</p>
+        <ul class="req-list">
+            <li><span class="cross">✕</span> Estudiantes con permiso de estancia</li>
+            <li><span class="cross">✕</span> Personas con estancia por búsqueda de empleo</li>
+            <li><span class="cross">✕</span> Titulares de residencia no lucrativa</li>
+        </ul>
+        <div class="warning-box">
+            <p>⚠️ Esto antes no estaba tan claro. Ahora el Gobierno lo ha definido de forma explícita.</p>
+        </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="section-card">
+        <div class="section-icon icon-blue">✅</div>
+        <h3>Requisitos para poder aplicar</h3>
+        <p>Para acogerte a esta regularización extraordinaria, necesitas cumplir <strong>todos</strong> estos requisitos:</p>
+        <ul class="req-list">
+            <li><span class="check">✓</span> Haber llegado a España <strong>antes del 1 de enero de 2026</strong></li>
+            <li><span class="check">✓</span> Ser mayor de edad</li>
+            <li><span class="check">✓</span> Llevar al menos <strong>5 meses en España sin salir</strong> del país</li>
+            <li><span class="check">✓</span> No tener antecedentes penales ni policiales</li>
+            <li><span class="check">✓</span> No tener prohibición de entrada ni compromiso de retorno</li>
+            <li><span class="check">✓</span> Haber pagado la tasa correspondiente</li>
+        </ul>
+        <div class="additional-label">Además, uno de estos</div>
+        <p>Necesitas cumplir <strong>al menos uno</strong> de estos requisitos adicionales:</p>
+        <ul class="req-list">
+            <li><span class="step-number">1</span> Haber trabajado al menos <strong>90 días</strong> o tener una oferta de empleo</li>
+            <li><span class="step-number">2</span> Vivir en familia (hijos menores escolarizados, hijos con discapacidad o padres)</li>
+            <li><span class="step-number">3</span> Encontrarte en situación de <strong>vulnerabilidad</strong></li>
+        </ul>
+        <div class="highlight-box">
+            <p>📅 Las solicitudes se podrán presentar desde la entrada en vigor del decreto hasta el <strong>30 de junio de 2026</strong>.</p>
+        </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="section-card">
+        <div class="section-icon icon-family">👨‍👩‍👧‍👦</div>
+        <h3>Familias: muy buenas noticias</h3>
+        <p><strong>Hijos menores de edad:</strong></p>
+        <p>Pueden incluirse directamente en tu solicitud. Ya no necesitan demostrar tiempo de permanencia, medios económicos ni informe de vivienda. Da igual si nacieron en España o no.</p>
+        <p style="margin-top:16px"><strong>Tu pareja, cónyuge y padres:</strong></p>
+        <p>También pueden incluirse dentro del proceso y regularizarse contigo.</p>
+        <div class="highlight-box">
+            <p>💙 Puedes regularizar a toda tu familia con una sola solicitud. Esto antes no era así.</p>
+        </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="section-card">
+        <div class="section-icon icon-shield">🛡️</div>
+        <h3>Solicitantes de asilo</h3>
+        <p>El segundo borrador introduce reglas específicas para personas que hayan pedido protección internacional:</p>
+        <ul class="req-list">
+            <li><span class="check">✓</span> Haber solicitado asilo <strong>antes del 1 de enero de 2026</strong></li>
+            <li><span class="check">✓</span> Llevar al menos 5 meses en España sin salir</li>
+            <li><span class="check">✓</span> No tener antecedentes penales ni prohibición de entrada</li>
+            <li><span class="check">✓</span> Haber pagado la tasa correspondiente</li>
+        </ul>
+        <div class="highlight-box">
+            <p>🔑 Si se admite tu trámite, podrás <strong>residir y trabajar de forma provisional</strong> hasta recibir la autorización oficial por un año, con posibilidad de prórroga.</p>
+        </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="section-card">
+        <div class="section-icon icon-gold">⚡</div>
+        <h3>¿Tienes un arraigo en trámite?</h3>
+        <p>Esta es una de las novedades más importantes:</p>
+        <p>Si ya tienes un procedimiento de arraigo en trámite (social, sociolaboral u otro), podrías obtener <strong>directamente tu residencia</strong> sin necesidad de presentar una nueva solicitud.</p>
+        <div class="highlight-box">
+            <p>🚀 Esto puede acelerar muchos expedientes que llevan meses esperando resolución.</p>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+        <h2>¿Quieres saber si puedes regularizarte?</h2>
+        <p>Cada caso es diferente. Agenda una consulta gratuita y revisamos tu situación paso a paso.</p>
+        <a href="https://formulario-travesia.vercel.app/" class="cta-button">Agenda tu cita gratis →</a>
+        <span class="cta-sub">Sin compromiso · 100% gratuita</span>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <div class="footer-logo">
+        <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 50 L30 15 L50 50" stroke="#1a1a5e" stroke-width="3" fill="none"/>
+            <path d="M70 50 L90 15 L110 50" stroke="#1a1a5e" stroke-width="3" fill="none"/>
+            <line x1="30" y1="15" x2="90" y2="15" stroke="#1a1a5e" stroke-width="3"/>
+            <line x1="10" y1="50" x2="110" y2="50" stroke="#1a1a5e" stroke-width="3"/>
+            <line x1="38" y1="15" x2="35" y2="50" stroke="#1a1a5e" stroke-width="1.5" opacity=".4"/>
+            <line x1="50" y1="15" x2="45" y2="50" stroke="#1a1a5e" stroke-width="1.5" opacity=".4"/>
+            <line x1="60" y1="15" x2="60" y2="50" stroke="#1a1a5e" stroke-width="1.5" opacity=".4"/>
+            <line x1="70" y1="15" x2="75" y2="50" stroke="#1a1a5e" stroke-width="1.5" opacity=".4"/>
+            <line x1="82" y1="15" x2="85" y2="50" stroke="#1a1a5e" stroke-width="1.5" opacity=".4"/>
+        </svg>
+    </div>
+    <p>Hecho con 💙 por <a href="https://formulario-travesia.vercel.app/">Travesía Legal</a></p>
+    <p style="margin-top:8px">Esta guía es informativa. Para asesoría personalizada, agenda tu consulta.</p>
+</div>
+
+<!-- FLOATING BAR -->
+<div class="floating-cta">
+    <p>¿Puedes regularizarte?</p>
+    <a href="https://formulario-travesia.vercel.app/">Cita gratis →</a>
+</div>
+
+</body>
+</html>
